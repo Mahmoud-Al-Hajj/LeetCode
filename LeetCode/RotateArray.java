@@ -16,7 +16,7 @@ class Solution {
         }
 }
 }
-
+//explanation by me: Reverse the whole array to bring the last k elements to the front, then reverse the two parts (the 0 till k-1 part and the rest) separately to restore their correct order.
 
 // Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
 
