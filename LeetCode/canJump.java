@@ -1,23 +1,20 @@
-public class canJump {
+class Solution {
     public boolean canJump(int[] nums) {
-        int total = nums.length - 1;
-        int JP = nums[0];
-        for (int i = 1; i < nums.length; i++) {
-            if (JP <= 0) {
+        int jumpPower = nums[0];
+
+        for (int i = 0; i < nums.length; i++) {
+            if (i > jumpPower) {
                 return false;
             }
-            JP--;
-            total--;
-            if (nums[i] > JP) {
-                JP = nums[i];
-            }
-            if (JP >= total) {
+            jumpPower = Math.max(jumpPower,i+nums[i]);
+            if (jumpPower >= nums.length - 1) {
                 return true;
             }
         }
-        return JP >= 0;
+        return true;
     }
 }
+
 
 // 55. Jump Game
 // You are given an integer array nums. You are initially positioned at the array's first index, and each element in the array represents your maximum jump length at that position.
